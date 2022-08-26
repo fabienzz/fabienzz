@@ -1,3 +1,9 @@
 Arrary,Map,Set
+
+set:unordered_set/set/muliset
+       Arrary    /BST/BST
+       
+
+
 Arrary: Great at dealing with character occurance problems, limited range of numbers
 Map: counting occurance(including duplicates)
