@@ -1,0 +1,41 @@
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* left;
+    Node* right;
+    Node* next;
+
+    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+};
+*/
+
+class Solution {
+public:
+    Node* connect(Node* root) {
+        queue<Node*> q1;
+        Node* cur = root;
+        if (root !=nullptr)     q1.push(cur);
+        while(!q1.empty()){
+            int size = q1.size();
+            Node* n = NULL;
+            for(int i =0;i<size;i++){
+                Node* node = q1.front();
+                node->next = n;
+                if (node->right)     q1.push(node->right);
+                if (node->left)     q1.push(node->left);
+                    
+                
+                q1.pop();
+                n = node;
+            }
+        }
+        return root;
+    }
+};
